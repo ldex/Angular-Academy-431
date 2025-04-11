@@ -1,59 +1,42 @@
-# DemoApp
+# Angular Academy Demo App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+Demo Project coded during an <a href="https://angular.ac" target="_blank">Angular Academy Workshop</a>.
 
-## Development server
+[![Angular Academy](https://www.angularacademy.ca/images/classroom.jpg "Angular Academy")](https://www.angularacademy.ca)
 
-To start a local development server, run:
+Angular Academy is a world-class hands-on instructor-led Angular training provider.
 
-```bash
-ng serve
+We have a long history of <a href="https://www.angularacademy.ca/world-firsts" target="_blank">World Firsts</a>...
+
+Visit www.angularacademy.ca for our list of Angular related courses:
+* <a href="https://www.angularacademy.ca/courses/angular-fundamentals-training" target="_blank">Angular Fundamentals</a>
+* <a href="https://www.angularacademy.ca/courses/angular-signals-training" target="_blank">Angular Signals Workshop</a>
+* <a href="https://www.angularacademy.ca/courses/advanced-angular-training" target="_blank">Advanced Angular</a>
+* <a href="https://www.angularacademy.ca/courses/testing-angular-training" target="_blank">Testing Angular</a>
+* <a href="https://www.angularacademy.ca/courses/angular-rxjs-training" target="_blank">RxJS Workshop</a>
+* <a href="https://www.angularacademy.ca/courses/angular-performance-optimization" target="_blank">Angular Performance Optimization</a>
+* <a href="https://www.angularacademy.ca/courses/angular-architecture-training" target="_blank">Angular Architecture</a>
+* <a href="https://www.angularacademy.ca/courses/advanced-angular-testing-training" target="_blank">Advanced Angular Testing</a>
+
+## Angular Certifications!
+
+Test your Angular skills, try a <a href="https://www.angularacademy.ca/angular-certification" target="_blank">Certification</a> exam!
+
+[![Angular Academy](https://www.angularacademy.ca/images/cert.png "Angular Certifications")](https://www.angularacademy.ca/angular-certification)
+
+
+## Local installation
+
+You need to restore the npm dependencies first:
+
+```sh
+npm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Run the app on a local dev server
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```sh
+ng s -o
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The app is running on `http://localhost:4200/` and will automatically reload if you change/save any of the source files.
