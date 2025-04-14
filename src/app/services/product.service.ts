@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  private baseUrl = 'https://671d383409103098807c943e.mockapi.io/api/products/';
+  private baseUrl = 'httpsdgf://671d383409103098807c943e.mockapi.io/api/products/';
   private http = inject(HttpClient);
 
   products$: Observable<Product[]>
