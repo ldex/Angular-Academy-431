@@ -1,0 +1,17 @@
+@if (product) {
+    <div>
+        <h2>{{product.name | uppercase}}</h2>
+        @if (product.imageUrl) {
+            <img style="float:right" [src]="product.imageUrl" width="250" />
+        }
+        <h3>{{product.description}}</h3>
+        <p>Price: {{product.price | currency:'CAD':'symbol-narrow':'.2'}}</p>
+        <p>Fixed price? {{product.fixedPrice}}</p>
+        <p>Discontinued? {{product.discontinued}}</p>
+        <p>Modified date:
+            {{product.modifiedDate | date}}</p>
+        <p>
+            <button (click)="addFavourites()">Add to my favourites</button>
+        </p>
+    </div>
+}

@@ -1,0 +1,32 @@
+<h2>
+    {{ title }}
+</h2>
+
+@if (errorMessage) {
+    <div class="errorMessage">
+        {{ errorMessage}}
+    </div>
+} @else {
+    @if (products$ | async; as products) {
+        <ul class="products">
+            @for (product of products; track product.id) {
+                <li [class.discontinued]="product.discontinued"
+                    [class.selected]="product === selectedProduct"
+                    (click)="onSelect(product)">
+                    <span class="name">{{ product.name | uppercase }}</span>
+                    <span class="description">{{ product.description }}</span>
+                    <span class="price">{{ product.price | currency:'CAD':currencyType:'.2' }}</span>
+                </li>
+            } @empty {
+                <li>No products to display</li>
+            }
+        </ul>
+    } @else {
+        <div class="loading"></div>
+    }
+}
+
+
+
+
+<app-product-detail [product]="selectedProduct" (addedToFavourites)="display($event)"></app-product-detail>
