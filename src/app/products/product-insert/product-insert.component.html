@@ -1,0 +1,114 @@
+<h2>New Product</h2>
+<form #insertForm="ngForm"
+      (ngSubmit)="onSubmit(insertForm.value)">
+    <label for="name">Name:</label>
+    <input
+        id="name"
+        name="name"
+        type="text"
+        minlength="3"
+        maxlength="50"
+        required
+        ngModel
+        #name="ngModel"
+        >
+        @if (name.dirty && name.invalid) {
+            <div class="errorMessage">
+              @if (name.hasError('required')) {
+                <span>Name is required</span>
+              }
+              @if (name.hasError('minlength')) {
+                <span>Min 3 characters for Name.</span>
+              }
+              @if (name.hasError('maxlength')) {
+                <span>Only 50 characters allowed for Name.</span>
+              }
+            </div>
+          }
+    <br />
+
+    <label for="price">Price:</label>
+    <input
+        id="price"
+        name="price"
+        type="number"
+	      step="0.01"
+        required
+        min="0"
+        max="100000"
+        ngModel
+        #price="ngModel">
+        @if (price.dirty && price.invalid) {
+            <div class="errorMessage">
+              @if (price.hasError('required')) {
+                <span>Price is required.</span>
+              }
+              @if (price.hasError('min')) {
+                <span>Negative price not allowed.</span>
+              }
+              @if (price.hasError('max')) {
+                <span>Max price allowed is 100 000.</span>
+              }
+            </div>
+          }
+    <br />
+
+    <label for="description">Description:</label>
+    <textarea
+        id="description"
+        name="description"
+        minlength="5"
+        maxlength="500"
+        ngModel
+        #description="ngModel">
+    </textarea>
+    @if (description.dirty && description.invalid) {
+        <div class="errorMessage">
+          @if (description.hasError('required')) {
+            <span>Description is required.</span>
+          }
+          @if (description.hasError('minlength')) {
+            <span>Min 5 characters</span>
+          }
+          @if (description.hasError('maxlength')) {
+            <span>Max 500 characters</span>
+          }
+        </div>
+      }
+    <br />
+
+    <label for="imageUrl">Image url:</label>
+    <input id="imageUrl"
+           name="imageUrl"
+           type="text"
+           placeholder="http://"
+           pattern="^(https?://[a-zA-Z0-9-.]+.[a-zA-Z]{2,5}(?:/S*)?(?:[-A-Za-z0-9+&@#/%?=~_|!:,.;])+.)(\\?(?:&?[^=&]*=[^=&]*)*)?$"
+           ngModel
+           #imageUrl="ngModel">
+           @if (imageUrl.dirty && imageUrl.invalid) {
+            <div
+              class="errorMessage">
+            @if (imageUrl.hasError('pattern')) {
+              <span>Invalid image url.</span>
+            }
+          </div>
+        }
+    <br />
+
+    <label for="discontinued">Discontinued?</label>
+    <input
+        id="discontinued" name="discontinued"
+        type="checkbox"
+        ngModel>
+    <br />
+
+    <label for="fixedPrice">Fixed price?</label>
+    <input
+        id="fixedPrice" name="fixedPrice"
+        type="checkbox"
+        ngModel>
+    <br />
+
+    <button type="submit"
+        [disabled]="insertForm.invalid">Save</button>
+</form>
